@@ -4,94 +4,130 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Calculator" Height="326.4" Width="303.05" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" OpacityMask="#FFE0BABA" WindowStyle="ThreeDBorderWindow" >
+        KeyDown="KeyDown_" Title="Calculator" Height="326.4" Width="303.05" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" BorderBrush="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" OpacityMask="#FFE0BABA" WindowStyle="ThreeDBorderWindow" >
 
-
-    <Grid Height="481" VerticalAlignment="Top" RenderTransformOrigin="0.648,0.507" Margin="0,0,0.2,-4.2" Background="#FF1F1F1F">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="217*"/>
+    
+    <Grid Background="White">
+        <Grid.ColumnDefinitions >
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="7" HorizontalAlignment="Left" Margin="0,104,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2,2,2,1" Click="Button_Click" BorderBrush="#FF282828" Background="#FF1D1B1B" Foreground="White"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
-        <TextBox  Margin="0,40,0,376" HorizontalAlignment="Left" Width="280" FontSize="22" Background="#1f1f1f" BorderThickness="0" Name="resultWindow"  Grid.ColumnSpan="2"  BorderBrush="#FF1F1F1F" SelectionBrush="Black" Foreground="White" IsReadOnly="True" IsReadOnlyCaretVisible="True" ScrollViewer.CanContentScroll="True"/>
-
-        <Button Content="8" HorizontalAlignment="Left" Margin="4.6,104,0,0" VerticalAlignment="Top" Width="74" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="9" HorizontalAlignment="Left" Margin="73,104,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.ColumnSpan="2" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="/" HorizontalAlignment="Left" Margin="77.6,104,0,0" VerticalAlignment="Top" Width="70" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="4" HorizontalAlignment="Left" Margin="0,147,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="5" HorizontalAlignment="Left" Margin="74,147,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.ColumnSpan="2" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="6" HorizontalAlignment="Left" Margin="6.6,147,0,0" VerticalAlignment="Top" Width="73" Height="43
-                " FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="*" HorizontalAlignment="Left" Margin="77.6,147,0,0" VerticalAlignment="Top" Width="70" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="1" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="2" HorizontalAlignment="Left" Margin="73,190,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.ColumnSpan="2" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="3" HorizontalAlignment="Left" Margin="4.6,190,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="-" HorizontalAlignment="Left" Margin="77.6,190,0,0" VerticalAlignment="Top" Width="70" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="0" HorizontalAlignment="Left" Margin="0,233,0,0" VerticalAlignment="Top" Width="74" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="=" HorizontalAlignment="Left" Margin="4.6,233,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="Result_click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="+" HorizontalAlignment="Left" Margin="77.6,233,0,0" VerticalAlignment="Top" Width="70" Height="43" FontSize="18" BorderThickness="2" Click="Button_Click" Grid.Column="1" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
-        <Button Content="C" HorizontalAlignment="Left" Margin="73,233,0,0" VerticalAlignment="Top" Width="75" Height="43" FontSize="18" BorderThickness="2" Click="C_Click" Grid.ColumnSpan="2" BorderBrush="#FF282828" Background="#FF1D1B1B">
-            <Button.Foreground>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}"/>
-            </Button.Foreground>
-        </Button>
+        <TextBox 
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"
+            HorizontalAlignment="Stretch" VerticalAlignment="Center"
+            IsHitTestVisible="False" FontSize="22" Background="White" BorderBrush="White"
+             Name="ResultWindow"/>   
+        <Button 
+            Grid.Row="1" Grid.Column="0" 
+            Content="7" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"
+            />
+        <Button
+            Grid.Row="1" Grid.Column="1"
+            Content="8" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="1" Grid.Column="2"
+            Content="9" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="1" Grid.Column="3"
+            Content="+" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="2" Grid.Column="0"
+            Content="4" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="2" Grid.Column="1"
+            Content="5" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="2" Grid.Column="2"
+            Content="6" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="2" Grid.Column="3"
+            Content="-" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="3" Grid.Column="0"
+            Content="1" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="3" Grid.Column="1"
+            Content="2" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="3" Grid.Column="2"
+            Content="3" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="3" Grid.Column="3"
+            Content="*" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="4" Grid.Column="0"
+            Content="C" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="C_Click"/>
+        <Button
+            Grid.Row="4" Grid.Column="1"
+            Content="0" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="4" Grid.Column="2"
+            Content="=" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Result_Click"/>
+        <Button
+            Grid.Row="4" Grid.Column="3"
+            Content="/" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="5" Grid.Column="0"
+            Content="" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="5" Grid.Column="1"
+            Content="" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="5" Grid.Column="2"
+            Content="," FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"
+            Click="Button_Click"/>
+        <Button
+            Grid.Row="5" Grid.Column="3"
+            Content="%" FontSize="18"
+            Background="#FF1D1B1B" Foreground="White"/>
 
     </Grid>
 </Window>
